@@ -1,0 +1,163 @@
+:root {
+    --home-primary: #00abe9;
+    --home-privary-hover: #4cc2ec;
+}
+
+.logo {
+    max-height: 45px;
+}
+
+.cart-logo {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    padding: 7px;
+}
+
+.cart-logo img {
+    width: 25px;
+    height: 25px;
+}
+
+.cart-logo::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--home-primary);
+    z-index: -1;
+}
+
+.cart-badge {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    font-size: .6rem;
+    border-radius: 50%;
+    padding: 3px;
+    text-align: center;
+}
+
+.cart-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.cart-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+#navbar {
+    background: var(--home-primary);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu>.menu-item .menu-link {
+    padding: 8px 32px;
+    height: 100%;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-item img.menu-icon {
+    width: 28px;
+    margin-bottom: 3px;
+}
+
+.menu-item {
+    position: relative;
+    transition: ease-in .2s;
+}
+
+.menu-item:hover {
+    background-color: var(--home-privary-hover);
+}
+
+.menu .menu-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.menu-list {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, .08);
+    opacity: 0;
+    transition: all 5s;
+}
+
+.menu-list li {
+    color: #000;
+    padding: 8px 0px 8px 32px;
+    min-width: 16.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.menu-list li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    background: var(--home-privary-hover);
+    transition: opacity .3s, color .3s;
+}
+
+.menu-list li:hover {
+    color: #fff;
+}
+
+.menu-list li:hover::before {
+    opacity: 1;
+}
+
+.menu-list .menu-list__link {
+    color: inherit;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.menu-item:hover>.menu-list {
+    display: flex;
+    opacity: 1;
+}
